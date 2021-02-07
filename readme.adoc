@@ -1,0 +1,11 @@
+. Swagger
+.. https://flask-restx.readthedocs.io/en/latest/
+. Input Validation
+. Multi tenant
+
+
+
+
+== Note
+* Load ENV at windows: source venv/Scripts/activate
+* Export Dependency: pip freeze > requirements.txt

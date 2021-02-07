@@ -1,6 +1,13 @@
+aniso8601==8.1.1
+attrs==20.3.0
 click==7.1.2
 Flask==1.1.2
+flask-restx==0.2.0
 itsdangerous==1.1.0
 Jinja2==2.11.3
+jsonschema==3.2.0
 MarkupSafe==1.1.1
+pyrsistent==0.17.3
+pytz==2021.1
+six==1.15.0
 Werkzeug==1.0.1
