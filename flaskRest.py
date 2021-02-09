@@ -1,5 +1,6 @@
-from flask import Flask
+from flask import Flask, make_response, json
 from flask_restx import Api, Resource, fields
+from werkzeug import Response
 
 app = Flask(__name__)
 api = Api(app, version='1.0', title='TodoMVC API',
@@ -8,9 +9,17 @@ api = Api(app, version='1.0', title='TodoMVC API',
 
 ns = api.namespace('todos', description='TODO operations')
 
+@api.representation('application/json')
+def output_json(data, code, headers=None):
+    resp = make_response(json.dumps(data), code)
+    resp.headers.extend(headers or {})
+    return resp
+
+
 todo = api.model('Todo', {
     'id': fields.Integer(readonly=True, description='The task unique identifier'),
-    'task': fields.String(required=True, description='The task details')
+    'task': fields.String(required=True, description='The task details'),
+    'task2': fields.String(required=True, description='The task details')
 })
 
 
