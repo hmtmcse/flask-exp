@@ -3,6 +3,8 @@
 . Input Validation
 . Multi tenant
 
+== Others
+* pip freeze > requirements.txt
 
 == Marshmallow
 * https://marshmallow.readthedocs.io
