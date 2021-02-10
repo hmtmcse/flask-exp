@@ -4,7 +4,11 @@
 . Multi tenant
 
 
-
+== Marshmallow
+* https://marshmallow.readthedocs.io
+* https://marshmallow.readthedocs.io/en/stable/examples.html
+* https://github.com/marshmallow-code/marshmallow/wiki/Ecosystem
+* https://github.com/fuhrysteve/marshmallow-jsonschema
 
 == Note
 * Load ENV at windows: source venv/Scripts/activate
