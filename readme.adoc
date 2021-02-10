@@ -4,6 +4,8 @@
 . Multi tenant
 
 == Others
+* pip install flask flask-sqlalchemy marshmallow
+* pip install -U marshmallow-sqlalchemy
 * pip freeze > requirements.txt
 
 == Marshmallow
