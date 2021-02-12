@@ -1,4 +1,6 @@
 aniso8601==8.1.1
+apispec==4.3.0
+apispec-webframeworks==0.5.2
 attrs==20.3.0
 click==7.1.2
 Flask==1.1.2

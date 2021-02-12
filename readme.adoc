@@ -7,6 +7,8 @@
 * pip install flask flask-sqlalchemy marshmallow
 * pip install -U marshmallow-sqlalchemy
 * pip install flask-swagger
+* pip install -U apispec
+* pip install apispec-webframeworks
 * pip freeze > requirements.txt
 
 == Marshmallow
