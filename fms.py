@@ -56,6 +56,12 @@ def create_user():
     return {"data": {"status": "error", "errors": errors}}
 
 
+@app.route("/user/list")
+def list_user():
+    user_list = User.query.all()
+    return UserDTO(many=True).dumps(user_list)
+
+
 @app.route('/')
 def bismillah():
     return "FMS Project"

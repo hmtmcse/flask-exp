@@ -6,6 +6,7 @@
 == Others
 * pip install flask flask-sqlalchemy marshmallow
 * pip install -U marshmallow-sqlalchemy
+* pip install flask-swagger
 * pip freeze > requirements.txt
 
 == Marshmallow
