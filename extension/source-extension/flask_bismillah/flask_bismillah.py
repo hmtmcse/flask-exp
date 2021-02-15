@@ -11,6 +11,9 @@ class Bismillah:
         app.config.setdefault('SQLITE3_DATABASE', ':memory:')
         app.teardown_appcontext(self.teardown)
 
+    def teardown(self, exception):
+        pass
+
     def print(self):
         print("Bismillah")
         return "Flask Extension Bismillah"
