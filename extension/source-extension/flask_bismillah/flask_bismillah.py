@@ -14,6 +14,7 @@ class Bismillah:
     def teardown(self, exception):
         pass
 
-    def print(self):
+    # @property
+    def print_me(self):
         print("Bismillah")
         return "Flask Extension Bismillah"
