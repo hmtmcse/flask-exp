@@ -2,7 +2,7 @@ import datetime
 import json
 
 from flask import Flask
-from zk import ZK
+from zk import ZK, const
 
 app = Flask(__name__)
 
@@ -34,9 +34,22 @@ def get_all_attendance_from_device(ip, port=4370, timeout=30, device_id=None, cl
     return list(map(lambda x: x.__dict__, attendances))
 
 
+def enrole(ip, port=4370, timeout=30):
+    zk = ZK(ip, port=port, timeout=timeout)
+    conn = zk.connect()
+    conn.set_user(uid=6, name='Mia Bhai', privilege=const.USER_DEFAULT, password='12345678', group_id='',
+                  user_id='800', card=0)
+    zk.enroll_user(uid=6)
+    return ""
+
 @app.route('/')
 def bismillah():
     out = get_all_attendance_from_device(ip="192.168.1.201", device_id="device1")
+    return {"response": out}
+
+@app.route('/enrole')
+def enrolement():
+    out = enrole(ip="192.168.1.201")
     return {"response": out}
 
 
