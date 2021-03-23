@@ -37,19 +37,18 @@ def get_all_attendance_from_device(ip, port=4370, timeout=30, device_id=None, cl
 def enrole(ip, port=4370, timeout=30):
     zk = ZK(ip, port=port, timeout=timeout)
     conn = zk.connect()
-    conn.set_user(uid=6, name='Mia Bhai', privilege=const.USER_DEFAULT, password='12345678', group_id='',
-                  user_id='800', card=0)
+    conn.set_user(uid=6, name='Hasina', privilege=const.USER_DEFAULT, password='12345678', group_id='', user_id='6', card=0)
     zk.enroll_user(uid=6)
     return ""
 
 @app.route('/')
 def bismillah():
-    out = get_all_attendance_from_device(ip="192.168.1.201", device_id="device1")
+    out = get_all_attendance_from_device(ip="192.168.2.201", device_id="device1")
     return {"response": out}
 
 @app.route('/enrole')
 def enrolement():
-    out = enrole(ip="192.168.1.201")
+    out = enrole(ip="192.168.2.201")
     return {"response": out}
 
 
