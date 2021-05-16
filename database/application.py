@@ -39,6 +39,7 @@ def m2m():
     db.session.add(home)
     db.session.commit()
 
+    home.tags = [] # Removed Previous items and add new items
     home.tags.extend([google, bing])
     db.session.add(home)
     db.session.commit()
