@@ -1,0 +1,20 @@
+= Development Help
+
+* Create Virtual Environment
+```bash
+python -m venv venv
+```
+* Run Application On Windows 10
+```bash
+source venv/Scripts/activate
+```
+* Export Dependencies
+```bash
+pip freeze > requirements.txt
+```
+
+* Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
