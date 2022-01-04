@@ -15,6 +15,7 @@ def before_request():
 
 def br():
     print("BR")
+    return "Access Denied"
 
 
 if __name__ == '__main__':
