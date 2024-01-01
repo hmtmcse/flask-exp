@@ -37,18 +37,39 @@ def get_all_attendance_from_device(ip, port=4370, timeout=30, device_id=None, cl
 def enrole(ip, port=4370, timeout=30):
     zk = ZK(ip, port=port, timeout=timeout)
     conn = zk.connect()
-    conn.set_user(uid=6, name='Hasina', privilege=const.USER_DEFAULT, password='12345678', group_id='', user_id='6', card=0)
-    zk.enroll_user(uid=6)
+    conn.set_user(uid=7, name='Hasina', privilege=const.USER_DEFAULT, password='12345678', group_id='', user_id='7', card=0)
+    zk.enroll_user(uid=7)
+    conn.disconnect()
     return ""
+
+
+def remote_enroll_device(ip, port=4370, timeout=30):
+    zk = ZK(ip, port=port, timeout=timeout)
+    conn = zk.connect()
+    print(conn.get_firmware_version())
+    print(conn.get_device_name())
+    print(conn.get_firmware_version())
+    # conn.enroll_user(uid=10, user_id=10)
+    # zk.enroll_user(uid=10, user_id=10)
+    # conn.disconnect()
+    return ""
+
+
 
 @app.route('/')
 def bismillah():
-    out = get_all_attendance_from_device(ip="192.168.2.201", device_id="device1")
+    out = get_all_attendance_from_device(ip="192.168.1.250", device_id="device1")
     return {"response": out}
 
 @app.route('/enrole')
 def enrolement():
-    out = enrole(ip="192.168.2.201")
+    out = enrole(ip="192.168.1.250")
+    return {"response": out}
+
+
+@app.route('/remote-enroll')
+def remote_enroll():
+    out = remote_enroll_device(ip="192.168.1.250")
     return {"response": out}
 
 
