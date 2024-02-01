@@ -37,8 +37,8 @@ def get_all_attendance_from_device(ip, port=4370, timeout=30, device_id=None, cl
 def enrole(ip, port=4370, timeout=30):
     zk = ZK(ip, port=port, timeout=timeout)
     conn = zk.connect()
-    conn.set_user(uid=7, name='Hasina', privilege=const.USER_DEFAULT, password='12345678', group_id='', user_id='7', card=0)
-    zk.enroll_user(uid=7)
+    conn.set_user(uid=5, name='Tajmirul Islam', privilege=const.USER_DEFAULT, password='12345678', group_id='', user_id='5', card=0)
+    # zk.enroll_user(uid=7)
     conn.disconnect()
     return ""
 
