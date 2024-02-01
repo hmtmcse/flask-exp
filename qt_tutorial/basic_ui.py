@@ -5,7 +5,7 @@ import sys
 class Ui(QtWidgets.QMainWindow):
     def __init__(self):
         super(Ui, self).__init__()  # Call the inherited classes __init__ method
-        uic.loadUi('basic_ui.ui', self)  # Load the .ui file
+        uic.loadUi('basic_ui.ui', self)
 
         self.calculateButton.clicked.connect(self.click_on_calculate_button)
 
