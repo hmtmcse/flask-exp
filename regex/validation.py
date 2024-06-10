@@ -13,3 +13,6 @@ response = pattern.fullmatch(validate)
 print(response)
 
 
+target_string = "The price of PINEAPPLE ice cream is 20"
+result = re.search(r"(\b[A-Z]+\b).+(\b\d+)", target_string)
+print(result.groups())

@@ -33,15 +33,23 @@ class DTOBase(object):
             return self.convert_snake_to_camel_case
         return None
 
+    def _load_nested_data_class(cls, data: dict):
+        kwargs = cls._get_load_kwargs(cls, data=data)
+        return cls(**kwargs)
+
     def _get_load_kwargs(cls, data: dict):
         property_modifier = cls._get_property_modifier(cls)
-        field_names = {field.name for field in dataclasses.fields(cls)}
+        field_name_type = {field.name: field.type for field in dataclasses.fields(cls)}
         kwargs = {}
         for key, value in data.items():
             if property_modifier and (not cls.exclude_props_mod or key not in cls.exclude_props_mod):
                 key = property_modifier(cls, text=key)
-            if key in field_names:
-                kwargs[key] = value
+            if key in field_name_type:
+                field_type = field_name_type[key]
+                if issubclass(field_type, DTOBase) and isinstance(value, dict):
+                    kwargs[key] = cls._load_nested_data_class(field_type, data=value)
+                else:
+                    kwargs[key] = value
         return kwargs
 
     @classmethod

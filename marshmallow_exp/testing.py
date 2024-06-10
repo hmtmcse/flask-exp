@@ -26,7 +26,7 @@ print(student.to_dict())
 
 print("\n")
 print("----- Load -----")
-student = Student.load_dict({"name": "Touhid", "email": "email@bfei.net", "password": "123456", "age": 33, "base":StudentBase(roll="Rool"), "companyName": "BM"})
+student = Student.load_dict({"name": "Touhid", "email": "email@bfei.net", "password": "123456", "age": 33, "base":{"x" : "X"}, "companyName": "BM"})
 print(student)
 print(student.to_dict())
 
