@@ -1,0 +1,4 @@
+
+('10.0.12.1', 34994): firewall,info forward: in:Rapid Net out:SRV_OFS_Bridge, proto TCP (SYN), 45.58.159.222:37340->10.0.12.22:443, NAT 45.58.159.222:37340->(103.145.208.134:443->10.0.12.22:443), len 44
+
+firewall,info forward: in:ether5_EXT out:Rapid Net, src-mac 2c:c8:1b:f4:85:e4, proto TCP (ACK,FIN), 10.0.15.100:57916->142.250.194.234:443, NAT (10.0.15.100:57916->103.145.208.134:57916)->142.250.194.234:443, len 52
